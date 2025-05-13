@@ -1,4 +1,4 @@
-# Motivational Message Microservice
+# Self Care Microservice
 
 This microservice analyzes journal entries for sentiment and provides a motivational message based on the sentiment. It is built using FastAPI and a pre-trained sentiment analysis model.
 
