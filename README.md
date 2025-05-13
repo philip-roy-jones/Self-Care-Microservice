@@ -7,32 +7,41 @@ This microservice analyzes journal entries for sentiment and provides a motivati
 1. **Clone the Repository**  
    Clone this repository to your local machine.
 
-2. **Install Python Dependencies**  
-   Ensure you have Python 3.8 or higher installed. Install the required dependencies:
+2. **Create a Virtual Environment and Activate it**  
+   Create and activate the virtual environment by running the following command in the root directory:
+
+    ### Windows
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+
+    ### macOS/Linux
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3. **Install Python Dependencies**  
+   Ensure you have Python 3.13 or higher installed. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Ensure JSON File Availability**  
+4. **Ensure JSON File Availability**  
    Make sure `motivational_messages.json` is in the same directory as `app.py`. It contains the motivational messages used by the service.
 
 ## Starting the FastAPI Server
 
-Activate the virtual environment by running the following command in the root directory:
-
-### Windows
-```bash
-.\venv\Scripts\activate
-```
-
-### macOS/Linux
-```bash
-source venv/bin/activate
-```
-
 ### With the venv activated, run:
+Development environment:
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Production environment:
+```bash
+uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 The server will start on `http://0.0.0.0:8000`.
 
