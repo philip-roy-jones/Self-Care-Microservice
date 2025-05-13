@@ -35,7 +35,7 @@ for category in MOTIVATIONAL_MESSAGES:
     while len(MOTIVATIONAL_MESSAGES[category]) < 100:
         MOTIVATIONAL_MESSAGES[category] += MOTIVATIONAL_MESSAGES[category][:5]
 
-@app.post("/analyze")
+@app.post("/api/analyze")
 def analyze_journal(entry: JournalEntry):
     # Analyze sentiment
     result = sentiment_pipeline(entry.journal_text)[0]
