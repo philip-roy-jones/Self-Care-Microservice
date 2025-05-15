@@ -1,5 +1,5 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, field_validator
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import random
 import json
@@ -12,6 +12,13 @@ analyzer = SentimentIntensityAnalyzer()
 class JournalEntry(BaseModel):
     mood: str
     journal_text: str
+    
+    @field_validator('journal_text')
+    def check_not_empty(cls, value):
+        if not value.strip():
+            raise HTTPException(status_code=422, detail="Journal text cannot be empty")
+        return value
+
 
 # Load motivational messages from JSON
 with open("motivational_messages.json", "r") as file:
