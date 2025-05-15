@@ -91,6 +91,15 @@ curl -X POST "http://0.0.0.0:8000/api/analyze" \
 }
 ```
 
+**HTTP Response Codes**
+
+| Code | Meaning                                      |
+|------|----------------------------------------------|
+| 200  | Successful request.                          |
+| 422  | Unprocessable Entity – missing or invalid fields in the request body. |
+| 405  | Method Not Allowed – incorrect HTTP method used. |
+
+
 ## Notes
 
 - Sentiment analysis is performed using [VADER](https://github.com/cjhutto/vaderSentiment), a lexicon‐ and rule‐based model included in the `vaderSentiment` library (no external downloads required).
