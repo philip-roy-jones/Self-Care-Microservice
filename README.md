@@ -93,7 +93,7 @@ curl -X POST "http://0.0.0.0:8000/api/analyze" \
 
 ## Notes
 
-- The sentiment model (`cardiffnlp/twitter-roberta-base-sentiment-latest`) downloads on first run.
+- Sentiment analysis is performed using [VADER](https://github.com/cjhutto/vaderSentiment), a lexicon‐ and rule‐based model included in the `vaderSentiment` library (no external downloads required).
 - Messages are categorized into `positive`, `neutral`, and `negative` and selected at random.
 
 ## License
