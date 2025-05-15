@@ -86,7 +86,7 @@ curl -X POST "http://0.0.0.0:8000/api/analyze" \
 **Sample Response**  
 ```json
 {
-  "positivity_score": "47.89%",
+  "positivity_score": "53.86%",
   "motivational_message": "Every setback is a setup for a comeback. Keep going!"
 }
 ```
