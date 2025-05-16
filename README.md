@@ -99,6 +99,9 @@ curl -X POST "http://0.0.0.0:8000/api/analyze" \
 | 422  | Unprocessable Entity – missing or invalid fields in the request body. |
 | 405  | Method Not Allowed – incorrect HTTP method used. |
 
+## UML Diagram
+
+![UML Diagram](images/uml-diagram.png)
 
 ## Notes
 
