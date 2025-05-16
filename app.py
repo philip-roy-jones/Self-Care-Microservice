@@ -50,7 +50,7 @@ def analyze_journal(entry: JournalEntry):
 
     # Response
     return {
-        "positivity_score": f"{positivity_percentage}%",
+        "positivity_score": positivity_percentage / 100,
         "motivational_message": message
     }
 

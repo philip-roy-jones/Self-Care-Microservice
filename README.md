@@ -67,7 +67,7 @@ Analyze a journal entry and return a positivity score plus a motivational messag
 - **Response Body**  
   ```json
   {
-    "positivity_score": "string",
+    "positivity_score": "float",
     "motivational_message": "string"
   }
   ```
@@ -86,7 +86,7 @@ curl -X POST "http://0.0.0.0:8000/api/analyze" \
 **Sample Response**  
 ```json
 {
-  "positivity_score": "53.86%",
+  "positivity_score": 0.5386,
   "motivational_message": "Every setback is a setup for a comeback. Keep going!"
 }
 ```
