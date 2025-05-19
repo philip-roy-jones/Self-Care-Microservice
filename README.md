@@ -72,18 +72,32 @@ Analyze a journal entry and return a positivity score plus a motivational messag
   }
   ```
 
-### Example with curl
-
+### Example Request
+#### Windows CMD
+```cmd
+curl -X POST "http://localhost:8000/api/analyze" ^
+     -H "Content-Type: application/json" ^
+     -d "{\"mood\": \"neutral\", \"journal_text\": \"Today was challenging but I kept going.\"}"
+```
+#### Windows PowerShell
+```powershell
+Invoke-WebRequest -Uri "http://127.0.0.1:8000/api/analyze" `
+    -Method POST `
+    -Headers @{"Content-Type" = "application/json"} `
+    -Body '{"mood": "neutral", "journal_text": "Today was challenging but I kept going."}' `
+    -UseBasicParsing
+```
+#### Bash (Linux/macOS)
 ```bash
-curl -X POST "http://0.0.0.0:8000/api/analyze" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "mood": "neutral",
-    "journal_text": "Today was challenging but I kept going."
-  }'
+curl -X POST "http://127.0.0.1:8000/api/analyze" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "mood": "neutral",
+           "journal_text": "Today was challenging but I kept going."
+         }'
 ```
 
-**Sample Response**  
+### Sample Response
 ```json
 {
   "positivity_score": 0.5386,
